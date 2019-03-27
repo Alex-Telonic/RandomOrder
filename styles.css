@@ -1,0 +1,24 @@
+body, html {
+  font-size: 16px;
+  color: #fff;
+  background: black;
+  font-family: 'Oxygen', sans-serif;
+  height: 100%;
+}
+
+#main_content {
+	background-image: url(images/background_1920x1080.jpg);
+	height: 100%;
+	background-position: center;
+  	background-repeat: no-repeat;
+  	background-size: cover;
+  	position: relative;
+
+
+}
+
+#button {
+	position: absolute;
+	top: 50%;
+	left: 40%;
+}
