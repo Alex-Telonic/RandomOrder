@@ -1,3 +1,9 @@
+ function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 function redirect() {
 
 	var appid = "Alexande-RandomOr-PRD-8ea94fa4c-cec0f5ed";
@@ -11,7 +17,10 @@ function redirect() {
     url += "&callback=jsonpcallback";
     url += "&REST-PAYLOAD";
     url += "&keywords=fun";
-    url += "&paginationInput.entriesPerPage=30";
+    url += "&paginationInput.pageNumber=";
+    url += getRandomInt(1,100);
+    url += "&paginationInput.entriesPerPage=1";
+    url += "&sortOrder=WatchCountDecreaseSort"
 
 
 	var testurl = "http://open.api.ebay.com/Shopping?callname=GetCategoryInfo&appid=" + appid 
@@ -34,7 +43,7 @@ console.log(url);
    
    console.log(jsdata);
    var items = jsdata.findItemsByKeywordsResponse[0].searchResult[0].item || [];
-   var itemURL = items[getRandomInt(0,29)].viewItemURL;
+   var itemURL = items[0].viewItemURL;
    console.log(itemURL);
    window.location.href = itemURL;
    //window.open(itemURL, '_blank');
@@ -42,8 +51,3 @@ console.log(url);
    $("#output").html();
  }
 
- function getRandomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
