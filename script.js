@@ -36,8 +36,8 @@ console.log(url);
    var items = jsdata.findItemsByKeywordsResponse[0].searchResult[0].item || [];
    var itemURL = items[getRandomInt(0,29)].viewItemURL;
    console.log(itemURL);
-   //window.location.href = itemURL;
-   window.open(itemURL, '_blank');
+   window.location.href = itemURL;
+   //window.open(itemURL, '_blank');
 
    $("#output").html();
  }
