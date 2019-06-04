@@ -8,6 +8,10 @@ function redirect() {
 
 	var appid = "Alexande-RandomOr-PRD-8ea94fa4c-cec0f5ed";
 
+	var keywords = ["fun", "useless", "joke", "prank", "crazy", "great"];
+
+
+
 	var url = "http://svcs.ebay.com/services/search/FindingService/v1";
     url += "?OPERATION-NAME=findItemsByKeywords";
     url += "&SERVICE-VERSION=1.0.0";
@@ -16,7 +20,8 @@ function redirect() {
     url += "&RESPONSE-DATA-FORMAT=JSON";
     url += "&callback=jsonpcallback";
     url += "&REST-PAYLOAD";
-    url += "&keywords=fun";
+    url += "&keywords=";
+    url += keywords[getRandomInt(0,5)];
     url += "&paginationInput.pageNumber=";
     url += getRandomInt(1,100);
     url += "&paginationInput.entriesPerPage=1";
@@ -44,10 +49,27 @@ console.log(url);
    console.log(jsdata);
    var items = jsdata.findItemsByKeywordsResponse[0].searchResult[0].item || [];
    var itemURL = items[0].viewItemURL;
+   var picURL = items[0].galleryURL;
+   var picTitle = items[0].title;
    console.log(itemURL);
-   window.location.href = itemURL;
+   console.log(picURL);
+   if(picURL.includes("http://thumbs1.ebaystatic.com/pict/04040_0.jpg")) {
+   	redirect();
+   	console.log("No picture")
+   }
+   else {
+   	   $("#product_title").text(picTitle);
+   	   $(".product_link").attr("href", itemURL);
+   	   $("#product_image").attr("src", picURL );
+   }
+
+
+
+
+   //window.location.href = itemURL;
    //window.open(itemURL, '_blank');
 
    $("#output").html();
  }
+
 

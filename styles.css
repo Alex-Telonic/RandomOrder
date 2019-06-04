@@ -1,7 +1,7 @@
 body, html {
   font-size: 16px;
   color: #fff;
-  background: black;
+  /* background: black; */
   font-family: 'Oxygen', sans-serif;
   height: 100%;
 }
@@ -17,8 +17,26 @@ body, html {
 
 }
 
+#middle_content {
+  
+  position: absolute;
+  top: 35%;
+  left: 35%;
+  
+}
+
 #button {
-	position: absolute;
-	top: 50%;
-	left: 40%;
+  background-color: black;
+  position: absolute;
+  top: 56%;
+  left: 34%;
+
+}
+
+#pic {
+  margin-bottom: 10px;
+}
+
+#product_title {
+  color: white;
 }
