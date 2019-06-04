@@ -37,7 +37,10 @@ function redirect() {
  $.ajax({
    dataType: "jsonp",
    method: "GET",
-   url: url, 
+   url: url,
+   xhrFields: {
+   withCredentials: false
+      } 
  });
  
 console.log(url);
