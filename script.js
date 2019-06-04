@@ -12,7 +12,7 @@ function redirect() {
 
 
 
-	var url = "http://svcs.ebay.com/services/search/FindingService/v1";
+	var url = "https://svcs.ebay.com/services/search/FindingService/v1";
     url += "?OPERATION-NAME=findItemsByKeywords";
     url += "&SERVICE-VERSION=1.0.0";
     url += "&SECURITY-APPNAME=Alexande-RandomOr-PRD-8ea94fa4c-cec0f5ed";
