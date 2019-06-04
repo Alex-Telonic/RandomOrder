@@ -17,11 +17,12 @@ body, html {
 
 }
 
-#middle_content {
+@media (min-width: 768px) {
+  #middle_content {
   
   position: absolute;
   top: 35%;
-  left: 35%;
+  /* left: 35%; */
   
 }
 
@@ -33,10 +34,33 @@ body, html {
 
 }
 
+
+
+}
+
 #pic {
   margin-bottom: 10px;
 }
 
 #product_title {
   color: white;
+}
+
+@media (max-width: 576px) {
+
+  #middle_content {
+    margin-top: 40%;
+    margin-left: 20%;
+
+
+  }
+
+  #button {
+  background-color: black;
+  position: absolute;
+  top: 45%;
+  left: 34%;
+
+}
+
 }
